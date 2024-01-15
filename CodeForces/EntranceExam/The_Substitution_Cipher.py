@@ -1,4 +1,4 @@
-def decrypt(cipher_text, plain_text, cipher):
+def decrypt(cipher, plain_text, prompt):
     """
     Decrypt a given cipher text using a provided mapping.
 
@@ -12,32 +12,35 @@ def decrypt(cipher_text, plain_text, cipher):
     """
 
     # Check if both cipher_text and plain_text have the same length and contain all 26 unique characters
-    if len(set(cipher_text)) != len(set(plain_text)) or len(set(cipher_text)) != 26:
-        print("Failed")
-        return
-
+    if len(set(cipher)) != len(set(plain_text)):
+        return('Failed')
+    if len(set(cipher)) < 26 or len(set(plain_text)) < 26:
+        return('Failed')
+    
     # Create a dictionary for mapping characters from cipher_text to plain_text
     mapping = {}
 
     # Populate the mapping dictionary
-    for cipher_char, plain_char in zip(cipher_text, plain_text):
-        if cipher_char not in mapping:
-            mapping[cipher_char] = plain_char
+    for cipher_char, plain_char in zip(cipher, plain_text):
+        if cipher_char in mapping:
+            if mapping[cipher_char] != plain_char:
+                return('Failed')
         else:
-            print("Failed")
-            return
+            mapping[cipher_char] = plain_char
+
+        
 
     # Decrypt the cipher using the created mapping
-    decrypted_text = "".join(mapping[char] for char in cipher)
+    decrypted_text = "".join(mapping[char] for char in prompt)
 
     # Print the decrypted text
-    print(decrypted_text)
+    return decrypted_text
 
 if __name__ == "__main__":
     # Input encrypted text, corresponding decrypted text, and the text to be decrypted
-    cipher_text = input()
-    plain_text = input()
     cipher = input()
+    plain_text = input()
+    prompt = input()
 
     # Call the decrypt function with the provided inputs
-    decrypt(cipher_text, plain_text, cipher)
+    print(decrypt(cipher, plain_text, prompt))

@@ -6,15 +6,8 @@
 # 1 3 2 4 5 10 15
 
 def variable_naming(var_names):
-    """
-    Generate variable names based on a given strategy.
 
-    Args:
-    - var_names (list): List of integers representing variables.
 
-    Returns:
-    - list: List of generated variable names.
-    """
 
     # Create a set to store used variable names
     mapping = set()
