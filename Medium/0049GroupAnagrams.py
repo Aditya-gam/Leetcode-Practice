@@ -23,3 +23,20 @@ class Solution(object):
 
         return anagrams.values()
     
+    def groupAnagrams3(self, strs):
+            
+            anagrams = {}
+            for s in strs:
+                key = tuple(sorted(s))
+                anagrams[key] = anagrams.get(key, []) + [s]
+    
+            return list(anagrams.values())
+    
+    def groupAnagrams4(self, strs):
+                
+                anagrams = {}
+                for s in strs:
+                    key = tuple(sorted(s))
+                    anagrams[key] = anagrams.get(key, []) + [s]
+        
+                return [group for group in anagrams.values()]
