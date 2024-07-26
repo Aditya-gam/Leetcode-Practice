@@ -22,3 +22,4 @@ class Solution(object):
             anagrams[key] = anagrams.get(key, []) + [s]
 
         return anagrams.values()
+    
