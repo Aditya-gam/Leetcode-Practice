@@ -38,4 +38,3 @@ class Solution(object):
 
         return self.gcd2(b, a % b)
 
-git commit -m "Easy 1071. Greatest Common Divisor of Strings"

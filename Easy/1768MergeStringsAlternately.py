@@ -26,5 +26,3 @@ class Solution(object):
         res += word1[min_len:] + word2[min_len:]
 
         return res
-    
-git commit -m "Easy 1768. Merge Strings Alternately"
