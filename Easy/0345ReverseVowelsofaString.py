@@ -8,7 +8,7 @@ class Solution(object):
         vowels = "aeiouAEIOU"
         s = list(s)
         i, j = 0, len(s) - 1
-        
+
         while i < j:
             while i < j and s[i] not in vowels:
                 i += 1
