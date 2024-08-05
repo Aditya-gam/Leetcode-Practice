@@ -43,4 +43,4 @@ class Solution(object):
         nums1 = set(nums1)
         nums2 = set(nums2)
 
-        return list(nums1 - nums2) + list(nums2 - nums1)
+        return list(nums1 - nums2), list(nums2 - nums1)
